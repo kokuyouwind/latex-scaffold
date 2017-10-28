@@ -1,0 +1,46 @@
+\documentclass[dvipdfmx,b5paper,10pt,openany]{jsbook}
+%\documentclass[dvipdfmx,b5paper,10pt,tombo,openany]{jsbook}
+
+\usepackage{subfiles}
+\input{settings}
+\input{settings_extra}
+
+\begin{document}
+
+  %表紙
+  %\includecover{./hyoshi/front.png}
+
+  \pagenumbering{roman}
+  \subfile{preface}
+
+  %\setstretch{0.9}
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+
+  \newpage
+  %\setstretch{0.95}
+  \setstretch{1}
+  \pagenumbering{arabic}
+
+  \subfile{prologue}
+  %\subfile{chapter1}
+  %\subfile{chapter2}
+  %\subfile{chapter3}
+  %\subfile{chapter4}
+  %\subfile{epilogue}
+
+  %\subfile{afterword}
+  %\subfile{commentary}
+
+  %\subfile{bibliography}
+
+  \newpage
+  \printindex
+
+  \subfile{colophon}
+
+  %裏表紙
+  %\newpage
+  %\includecover{./hyoshi/back.png}
+
+\end{document}

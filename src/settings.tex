@@ -1,0 +1,83 @@
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{amsmath,amssymb,amscd}
+\usepackage{mathtools}
+\usepackage{euler}
+\usepackage{okumacro}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{ascmac}
+\usepackage{here}
+
+% listings
+\usepackage{listings,jlisting}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{colFunc}{rgb}{1,0.07,0.54}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{colID}{rgb}{0.63,0.44,0}
+
+\lstset{
+language=C,%プログラミング言語によって変える。
+basicstyle={\ttfamily\small},
+commentstyle={\ttfamily\small},
+tabsize=2,
+frame=single,
+numbers=none,
+breaklines=true,%折り返し
+backgroundcolor={\color[gray]{.95}},
+captionpos=b,
+showstringspaces=false,
+xleftmargin=\parindent,
+xrightmargin=\parindent,
+}
+\renewcommand{\lstlistingname}{コード}
+% hyperref
+%\usepackage[dvipdfmx]{hyperref}
+\usepackage{url}
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+\usetikzlibrary{shapes,backgrounds}
+
+%index
+\usepackage{makeidx}
+\makeindex
+\newcommand{\indexterm}[2]{{\sf #1}\index{#2@#1}}
+\newcommand{\term}[2]{#1\index{#2@#1}}
+\newcommand{\nindexterm}[4]{{\sf #1#2}\index{#3@#1!#4@---#2}}
+
+\setlength{\textwidth}{\fullwidth}
+\setlength{\evensidemargin}{\oddsidemargin}
+%デフォルトをゴシックにする
+%\renewcommand{\kanjifamilydefault}{\gtdefault}
+%各種コマンド
+\newcommand{\urlnote}[1]{\footnote{\url{#1}}}
+\def\chapterautorefname~#1\null{第~#1章\null}
+\newcommand{\refch}[1]{\autoref{ch:#1}}
+\def\sectionautorefname~#1\null{~#1節\null}
+\newcommand{\refsec}[1]{\autoref{sec:#1}}
+\def\lstlistingautorefname~#1\null{コード~#1\null}
+\newcommand{\refcode}[1]{\autoref{code:#1}}
+\def\figureautorefname~#1\null{図~#1\null}
+\newcommand{\reffig}[1]{\autoref{fig:#1}}
+%\def\equationautorefname~#1\null{式~#1\null}
+%\newcommand{\refeq}[1]{\autoref{eq:#1}}
+
+%表紙・裏表紙の挿入コマンド
+\newcommand{\includecover}[1]{
+\enlargethispage{\paperwidth}
+\thispagestyle{empty}
+\vspace*{-1truein}
+\vspace*{-\topmargin}
+\vspace*{-1.16\headheight}
+\vspace*{-\headsep}
+\vspace*{-\topskip}
+\noindent\hspace*{-1.04in}\hspace*{-\oddsidemargin}
+\includegraphics[width=1.005\paperwidth]{#1}
+\newpage
+}

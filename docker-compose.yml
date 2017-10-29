@@ -1,7 +1,7 @@
 version: '2'
 services:
   latex:
-    build: .
+    image: kokuyouwind/docker-latex-jlisting
     working_dir: /work/src
     volumes:
       - .:/work

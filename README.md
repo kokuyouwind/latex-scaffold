@@ -1,6 +1,6 @@
 # Re:VIEW Scaffold
 
-Scaffold Boilerplate for [TeX Live](http://www.tug.org/texlive/) and [latex-docker](https://github.com/blang/latex-docker).
+Scaffold Boilerplate for [TeX Live](http://www.tug.org/texlive/) and [docker-latex-jlisting](https://github.com/kokuyouwind/docker-latex-jlisting).
 
 ## Requirements
 
@@ -22,5 +22,3 @@ Run commands at project root.
   - creates `dists/index.pdf`
 - `./bin/build [partfile]` for create partial pdf.
   - creates `dists/[partfile].pdf`
-- `docker-compose build` for build docker image.
-  - if you change `Dockerfile` or base image changed, then run this command.

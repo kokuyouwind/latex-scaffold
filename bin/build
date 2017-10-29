@@ -1,0 +1,8 @@
+#!/bin/sh
+docker-compose run --rm latex bash -c "latexmk \
+  -e '\$latex=q/platex -synctex=1 -kanji=utf8 -guess-input-enc/' \
+  -e '\$bibtex=q/pbibtex -kanji=utf8/' \
+  -e '\$makeindex=q/mendex -U/' \
+  -e '\$dvipdf=q/dvipdfmx %O -o %D %S/' \
+  -norc -gg -pdfdvi -f $@ \
+  && mv *.pdf ../dists/"
